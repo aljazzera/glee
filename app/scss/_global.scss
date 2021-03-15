@@ -1,5 +1,16 @@
+html,
+body{
+  height: 100%;
+}
+
 body{
   color: $primary;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex-grow: 1;
 }
 
 .container{
