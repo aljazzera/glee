@@ -3,5 +3,133 @@
 @import 'reset';
 @import 'global';
 
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  background-color: #ffffff;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 0;
+  }
+  & .menu{
+    &__list{
+      @extend %flex-center;
+    }
+    &__item{
+      &-link{
+        @extend %rubik-500;
+        font-size: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+        -webkit-transition: border-color 0.3s ease;
+        -moz-transition: border-color 0.3s ease;
+        -ms-transition: border-color 0.3s ease;
+        -o-transition: border-color 0.3s ease;
+        &:hover{
+          border-bottom: 1px solid $primary;
+        }
+      }
+    }
+    &__item:not(:last-child){
+      margin-right: 35px;
+    }
+  }
+  &-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__link{
+      @extend %flex-center;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(67, 99, 114, 0.2);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      transition: background-color 0.3s ease, fill 0.3s ease;
+      -webkit-transition: background-color 0.3s ease, fill 0.3s ease;
+      -moz-transition: background-color 0.3s ease, fill 0.3s ease;
+      -ms-transition: background-color 0.3s ease, fill 0.3s ease;
+      -o-transition: background-color 0.3s ease, fill 0.3s ease;
+      &:first-child{
+        margin-right: 20px;
+      }
+      &:hover{
+        background-color:rgba(67, 99, 114, 1);
+        & svg path{
+          transition: fill 0.3s ease;
+          -webkit-transition: fill 0.3s ease;
+          -moz-transition: fill 0.3s ease;
+          -ms-transition: fill 0.3s ease;
+          -o-transition: fill 0.3s ease;
+          fill: #ffffff;
+        }
+      }      
+    }
+    &__block{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-right: 20px;
+      width: 178px;
+      
+      background-color: #fcd7b6;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      -ms-border-radius: 25px;
+      -o-border-radius: 25px;
+      & > .header-actions__link{
+        background-color: transparent;
+        position: relative;
+        margin: 0;
+        width: 100%;
+        &:first-child::after{
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 32px;
+          background-color: #fde7d3;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+        }
+      }   
+    }
+    &__count{
+      position: absolute;
+      top: 18%;
+      right: 28%;
+      width: 16px;
+      height: 16px;
+      background-color: #ffffff;
+      font-size: 10px;
+      @extend%flex-center;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+}
+
+.hero{
+  position: relative;
+  background-color: #fcd7b6;
+  min-height: 100vh;
+}
 
 @import 'media';
