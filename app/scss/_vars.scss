@@ -1,5 +1,52 @@
 $primary: #436372;
+$dark: #1a1a1a;
+$lightblue: #a3bbc8;
+$white: #ffffff;
+$lightorange: #fcd7b6;
+$text-color: #243f4d;
+$newDesignBg: #f8f8f8;
+$card-title: #191919;
 
+// Mixins
+
+@mixin more-btn{
+  display: inline-block;
+  position: relative;
+  padding: 20px 85px 20px 20px;
+  border: 1px solid $primary;
+  border-radius: 5px;
+  color: $primary;
+  font-weight: 500;
+  font-size: 15px;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 9px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: url('../../images/icons/more-arrow.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin caption {
+  text-align: center;
+  font-size: 36px;
+  color: #191919;
+  font-weight: 700;
+  @extend %dmsans;
+}
+
+@mixin card-title{
+  display: inline-block;
+  font-size: 20px;
+  @extend %dmsans;
+  font-weight: 770;
+  color: $card-title;
+  max-width: 175px;
+}
 
 %flex-center{
   display: flex;
@@ -7,38 +54,20 @@ $primary: #436372;
   align-items: center;
 }
 
-
-%dmsans-700{
-  font-family: 'DMSans-Bold', sans-serif;
-  font-weight: 700;
+%line-clamp{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
-%dmsans-500{
-  font-family: 'DMSans-Medium', sans-serif;
-  font-weight: 500;
+%dmsans{
+  font-family: 'DMSans', sans-serif;
 }
 
-%dmsans-400{
-  font-family: 'DMSans-Regular', sans-serif;
-  font-weight: 400;
+%poppins{
+  font-family: 'Poppins', sans-serif;
 }
 
-%poppins-700{
-  font-family: 'Poppins-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%rubik-700{
-  font-family: 'Rubik-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%rubik-500{
-  font-family: 'Rubik-Medium', sans-serif;
-  font-weight: 500;
-}
-
-%rubik-400{
-  font-family: 'Rubik-Regular', sans-serif;
-  font-weight: 400;
+%rubik{
+  font-family: 'Rubik', sans-serif;
 }

@@ -1,0 +1,133 @@
+.hero{
+  position: relative;
+
+  &__inner{
+    background-color: $lightorange;
+  }
+
+  &__slider{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 45px 15px;
+  }
+
+  &__slider-item{
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 55px;
+      right: 7px;
+      width: 609px;
+      height: 640px;
+      background-image: url('../images/content/hero/hero-circle.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__wrapper{
+    min-height: 730px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__slider-right{
+    position: relative;
+    width: 75%;
+    z-index: 10;
+  }
+
+  &__slider-left{
+    max-width: 50%;
+    margin-bottom: 50px;
+    padding-left: 120px;
+  }
+
+  &__title{
+    font-size: 72px;
+    @extend %rubik;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    @extend %line-clamp;
+    -webkit-line-clamp: 2;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 1.7;
+    @extend %rubik;
+    max-width: 370px;
+    margin-bottom: 40px;
+    @extend %line-clamp;
+    -webkit-line-clamp: 4;
+  }
+
+  &__btn{
+    position: relative;
+    display: inline-block;
+    color: $white;
+    @extend %rubik;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-color: $lightblue;
+    padding: 25px 100px 25px 25px;
+    transition: background-color 0.3s ease;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      width: 24px;
+      height: 10px;
+      background-image: url('../images/icons/icon-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transform: translateY(-50%);
+    }
+    &:hover{
+      background-color:rgba(67, 99, 114, 0.9)
+    }
+  }
+
+  .slick{
+    position: relative;
+    &-dots{
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 45px;
+      @extend %rubik;
+      font-weight: 500;
+    }
+  
+    &-dots button{
+      border-radius: 50%;
+      border: none;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      color: $primary;
+      font-size: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.3s ease;
+      &:hover{
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  
+    &-dots li:not(:last-child){
+      margin-right: 10px;
+    }
+    
+    &-active button{
+      background-color: rgba(255, 255, 255, 1);
+    }
+    
+  }
+
+}
