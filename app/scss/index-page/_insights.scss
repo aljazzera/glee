@@ -1,0 +1,158 @@
+.insights{
+  @extend %dmsans;
+  font-weight: 700;
+  color: $darkness;
+  padding-top: 110px;
+
+  &__inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__box{
+
+    &:first-child{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 45px;
+    }
+
+  }
+
+  &__caption{
+    @include caption;
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  &__view{
+    display: inline-block;
+    font-size: 16px;
+    padding-right: 25px;
+    position: relative;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+
+    &::after{
+      content: '>';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      font-weight: 400;
+      font-size: 22px;
+      transform: translateY(-50%);
+    }
+
+    &:hover{
+      color: $primary;
+    }
+
+  }
+
+  &__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__list li{
+    max-width: 370px;
+    position: relative;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    transition: visibility 1s ease;
+    &:not(:last-child){
+      margin-right: 30px;
+    }
+    &:hover .overlay{
+      border-radius: 6px;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &:hover .insights__mark{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__content{
+    position: relative;
+    padding: 30px 29px 20px;
+    background-color: $white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 3;
+  }
+
+  &__mark{
+    @include mark;
+    position: absolute;
+    padding: 7px 31px;
+    top: -20px;
+    left: 26px;
+    transition: transform 0.3s ease, left 0.3s ease;
+  }
+
+  &__desc{
+    display: flex;
+    flex-direction: column;
+    min-height: 88px;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 15px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: color 0.3s ease;
+    @extend %line-clamp;
+    -webkit-line-clamp: 3;
+    &:hover{
+      color: $primary;
+    }
+  }
+
+  &__info{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    line-height: 2.5;
+    font-size: 12px;
+    font-weight: 500;
+    @extend %rubik;
+  }
+
+  &__date{
+    padding-left: 20px;
+    margin-right: 25px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background-image: url('../../images/content/insights/calendar.svg');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__user{
+    padding-left: 20px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background-image: url('../../images/content/insights/user.svg');
+      background-repeat: no-repeat;
+    }
+  }
+
+}
+

@@ -5,7 +5,7 @@ $white: #ffffff;
 $lightorange: #fcd7b6;
 $text-color: #243f4d;
 $newDesignBg: #f8f8f8;
-$card-title: #191919;
+$darkness: #191919;
 
 // Mixins
 
@@ -44,8 +44,19 @@ $card-title: #191919;
   font-size: 20px;
   @extend %dmsans;
   font-weight: 770;
-  color: $card-title;
+  color: $darkness;
   max-width: 175px;
+}
+
+@mixin mark{
+  line-height: 1.4;
+  font-size: 14px;
+  background-color: $lightblue;
+  text-transform: uppercase;
+  color: $white;
+  padding: 10px 30px;
+  @extend %poppins;
+  border-radius: 24px;
 }
 
 %flex-center{
@@ -59,6 +70,8 @@ $card-title: #191919;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+
+// -webkit-line-clamp: 3;
 
 %dmsans{
   font-family: 'DMSans', sans-serif;

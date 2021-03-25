@@ -1,4 +1,8 @@
-$(function(){    
+$(function(){  
+  
+  if ($(window).scrollTop() > 1){
+    $('.header').addClass("sticky");
+  }
   
   $(window).scroll(function() {
     if ($(this).scrollTop() > 1){
@@ -16,6 +20,14 @@ $(function(){
     fade: true
   }); 
   
+  $('.partners__list').slick({
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  }); 
 
   var mixProduct = $('[data-ref="mixProduct"]');
   var mixNew = $('[data-ref="mixNew"]');
@@ -39,5 +51,16 @@ $(function(){
       duration: 800
     }
   });
+
+
+  $('.video__link').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
+	});
 
 });
